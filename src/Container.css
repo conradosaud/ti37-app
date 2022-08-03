@@ -1,0 +1,58 @@
+#container ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+#container li{
+    background: #FFF;
+    margin: 20px;
+    padding: 20px;
+    padding-bottom: 30px;
+    position: relative;
+    border: 1px solid #E5E5E5;
+    border-radius: 7px;
+    box-shadow: -1px 2px 3px #E5E5E5;
+}
+
+#container h2{
+    margin: 0;
+    margin-bottom: 5px;
+    font-size: 1.2em;
+    color: #454545;
+}
+
+#container p{
+    margin: 0;
+    font-size: 0.8em;
+    color: #757575;
+}
+
+#container ul button{
+    position: absolute;
+    right: 5px;
+    bottom: 5px;
+}
+
+#container .btnAlterar{
+    right: 40px;
+}
+
+#container form input{
+    margin-top: 20px;
+    padding: 10px;
+    border-radius: 5px 0 0 5px;
+    border: 1px solid #CCC;
+    border-right: none;
+}
+
+#container form button{
+    padding: 10px;
+    background: #FFF;
+    border: 1px solid #CCC;
+    border-left: none;
+    border-radius: 0 5px 5px 0;
+}
+
+#container form{
+    text-align: center;
+}
