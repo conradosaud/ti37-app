@@ -11,7 +11,7 @@ function Menu( props ) {
         <div id="menu" >
 
             <h1> Conradito Filmes </h1>
-            <button onClick={ () => alteraModal() } > + </button>
+            <button onClick={ () => alteraModal() } > <i class="fa-solid fa-circle-plus"></i> </button>
 
         </div>
 

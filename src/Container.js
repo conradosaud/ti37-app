@@ -3,46 +3,17 @@ import './Container.css';
 
 import axios from 'axios';
 
-function Container() {
-
-    const [ filmes, alteraFilmes ] = React.useState( [] );
+function Container( { filmes, buscaTodos, buscaTitulo } ) {
 
     // Garante que as funções dentro dele só serão chamadas
     // apenas UMA VEZ durante toda a aplicação
-    React.useEffect( () => { 
+    React.useEffect( () => buscaTodos(), [] );
 
-        axios.get('http://localhost:3001/filmes')
-        .then(function (response) {
-
-            const dados = response.data;
-            alteraFilmes( dados );
-
-        })
-        .catch(function (error) {
-
-            console.log(error);
-
-        })
-
-    }, [] );
-
-    const buscaTitulo = ( e ) => {
+    const pesquisa = ( e ) => {
         e.preventDefault();
 
         const titulo = e.target.titulo.value;
-
-        axios.get(`http://localhost:3001/busca_filmes/${titulo}` )
-        .then(function (response) {
-
-            const dados = response.data;
-            alteraFilmes( dados );
-
-        })
-        .catch(function (error) {
-
-            console.log(error);
-
-        })
+        buscaTitulo( titulo )
 
     }
 
@@ -50,9 +21,9 @@ function Container() {
 
         <div id="container" >
 
-            <form onSubmit={ e => buscaTitulo( e ) } >
+            <form onSubmit={ e => pesquisa( e ) } >
                 <input name="titulo" type="text" placeholder="Pesquise um título..." />
-                <button> P </button>
+                <button> <i class="fa-solid fa-magnifying-glass"></i> </button>
             </form>
 
             <ul>
@@ -67,8 +38,8 @@ function Container() {
                             <li> 
                                 <h2> { f.titulo } </h2>
                                 <p> { f.sinopse } </p>
-                                <button className="btnAlterar" > A </button>
-                                <button> R </button>
+                                <button className="btnAlterar" > <i class="fa-solid fa-pen-to-square"></i> </button>
+                                <button> <i class="fa-solid fa-trash"></i> </button>
                             </li>
                         )
 
