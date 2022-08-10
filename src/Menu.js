@@ -1,17 +1,20 @@
 import './Menu.css';
 
-function Menu( props ) {
-
-    const alteraModal = () => {
-        props.alteraModal( true );
-    }
+function Menu( { alteraModal, alteraModalUsuario, usuario } ) {
 
     return (
 
         <div id="menu" >
 
             <h1> Conradito Filmes </h1>
-            <button onClick={ () => alteraModal() } > <i class="fa-solid fa-circle-plus"></i> </button>
+
+            {
+                usuario.id ?
+                    <button onClick={ () => alteraModal( true ) } > <i class="fa-solid fa-circle-plus"></i> </button>
+                :
+                    <button onClick={ () => alteraModalUsuario( true ) } > <i class="fa-solid fa-user-plus"></i> </button>
+            }
+
 
         </div>
 

@@ -16,7 +16,7 @@ function Modal( props ) {
             sinopse: sinopse
         }
 
-        props.insere( obj ); 
+        props.insere( "filmes", obj ); 
         cancelar( e );
 
     }
@@ -28,10 +28,10 @@ function Modal( props ) {
 
     return (
 
-        <div id="modal" className={ props.modal == false ? "invisivel" : "" } >
+        <div className={ `painelModal ${props.modal == false ? "invisivel" : ""} ` } >
 
             <div className="fundoModal" ></div>
-            <div className="modal" >
+            <div className="modal animate__animated animate__fadeInDownBig" >
 
                 <h2> Cadastre um filme </h2>
 

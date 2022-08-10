@@ -1,8 +1,8 @@
-#modal.invisivel {
+.painelModal.invisivel {
     display: none;
 }
 
-#modal form input{
+.painelModal form input{
     display: block;
     margin: auto;
     margin-bottom: 15px;
@@ -10,7 +10,7 @@
     border: 1px solid #CCC;
 }
 
-#modal .modal{
+.painelModal .modal{
     text-align: center;
     background: #FFF;
     position: absolute;
@@ -22,7 +22,7 @@
     border-radius: 10px;
 }
 
-#modal .fundoModal{
+.painelModal .fundoModal{
     background: rgba(0, 0, 0, 0.3);
     width: 100%;
     height: 100%;
@@ -31,7 +31,7 @@
     z-index: 100;
 }
 
-#modal .btnSalvar{
+.painelModal .btnSalvar{
     padding: 10px 25px;
     border: none;
     background: #4CAF50;
@@ -40,7 +40,7 @@
     margin-left: 20px;
 }
 
-#modal .btnCancelar{
+.painelModal .btnCancelar{
     padding: 10px 25px;
     border: none;
     background: #616161;
