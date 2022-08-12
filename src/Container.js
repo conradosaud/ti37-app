@@ -3,7 +3,7 @@ import './Container.css';
 
 import axios from 'axios';
 
-function Container( { filmes, buscaTodos, buscaTitulo, remove, usuario } ) {
+function Container( { filmes, buscaTodos, buscaTitulo, remove, usuario, deslogaUsuario } ) {
 
     // Garante que as funções dentro dele só serão chamadas
     // apenas UMA VEZ durante toda a aplicação
@@ -22,7 +22,11 @@ function Container( { filmes, buscaTodos, buscaTitulo, remove, usuario } ) {
         <div id="container" >
 
             {
-                usuario.nome && <p> Você está conectado como: <strong> { usuario.nome } </strong> </p>
+                usuario.nome &&
+                <p> Você está conectado como:
+                    <strong> { usuario.nome } </strong>
+                    <button onClick={ ()=> deslogaUsuario() } > Sair </button>
+                </p>
             }
 
             <form onSubmit={ e => pesquisa( e ) } >

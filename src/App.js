@@ -58,12 +58,16 @@ function App() {
         .then( () => buscaTodos() )
     }
 
+    const deslogaUsuario = () => {
+        alteraUsuario( {} );
+    }
+
     return (
 
         <div id="app" >
 
             <Menu usuario={usuario} modal={ modal } alteraModal={ alteraModal } modalUsuario={modalUsuario} alteraModalUsuario={alteraModalUsuario} />
-            <Container usuario={usuario} remove={remove} buscaTitulo={buscaTitulo} buscaTodos={buscaTodos} filmes={ filmes } alteraFilmes={ alteraFilmes } />
+            <Container deslogaUsuario={deslogaUsuario} usuario={usuario} remove={remove} buscaTitulo={buscaTitulo} buscaTodos={buscaTodos} filmes={ filmes } alteraFilmes={ alteraFilmes } />
             <Modal insere={insere} modal={ modal } alteraModal={ alteraModal } />
             <ModalUsuario autentica={autentica} insere={insere} modalUsuario={modalUsuario} alteraModalUsuario={alteraModalUsuario} />
 
