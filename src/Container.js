@@ -13,7 +13,12 @@ function Container( { filmes, buscaTodos, buscaTitulo, remove, usuario, deslogaU
         e.preventDefault();
 
         const titulo = e.target.titulo.value;
-        buscaTitulo( titulo )
+
+        if( titulo == "" ){
+            buscaTodos();
+        }else{
+            buscaTitulo( titulo )
+        }
 
     }
 

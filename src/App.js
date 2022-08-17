@@ -29,7 +29,7 @@ function App() {
     }
 
     const buscaTitulo = ( titulo ) => {
-        axios.get( API_URL + `busca_filmes/${titulo}` )
+        axios.get( API_URL + `filmes/busca_filmes/${titulo}` )
         .then( response => alteraFilmes( response.data ) )
     }
 
